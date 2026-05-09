@@ -149,6 +149,10 @@ a:hover {
     border-bottom: none;
 }
 
+.experience-table tr.experience-row-last td {
+    border-bottom: 1px solid #ddd;
+}
+
 .exp-logo {
     width: 80px;
     padding-right: 18px;
@@ -486,23 +490,73 @@ footer {
         height: 120px;
     }
 
-    .exp-logo {
-        width: auto;
-        display: inline-block;
-        padding-right: 10px;
-        padding-bottom: 4px;
+    /* Experience: one cohesive card per row (logo + details + dates, single divider) */
+    .experience-table {
+        display: block;
+        border-collapse: separate;
+        border-spacing: 0;
     }
 
-    .exp-date {
-        width: auto;
-        text-align: left;
-        padding-left: 0;
+    .experience-table tbody {
         display: block;
-        margin-top: 4px;
+    }
+
+    .experience-table tr {
+        display: grid;
+        grid-template-columns: 52px minmax(0, 1fr);
+        grid-template-rows: auto auto;
+        align-items: start;
+        column-gap: 12px;
+        row-gap: 2px;
+        padding: 16px 0;
+        border-bottom: 1px solid #eee;
+        width: 100%;
+        border-top: none;
+    }
+
+    .experience-table tr.experience-row-last {
+        border-bottom: 2px solid #ddd;
+    }
+
+    /* Strip per-cell borders (they stack as lines around dates); separators live on tr only */
+    .experience-table td,
+    .experience-table tr:last-child td,
+    .experience-table tr.experience-row-last td {
+        border: 0 none !important;
     }
 
     .experience-table td {
         display: block;
+        padding: 0;
+    }
+
+    .exp-logo {
+        grid-column: 1;
+        grid-row: 1 / -1;
+        align-self: center;
+        width: auto;
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+
+    .company-logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    .exp-body {
+        grid-column: 2;
+        grid-row: 1;
+        min-width: 0;
+    }
+
+    .exp-date {
+        grid-column: 2;
+        grid-row: 2;
+        width: 100%;
+        text-align: left;
+        padding-left: 0;
+        margin-top: 0;
     }
 
     .carousel-card {
