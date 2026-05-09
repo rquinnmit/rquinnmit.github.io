@@ -48,8 +48,8 @@
                 Hi! I'm Ryan Quinn, a third year undergraduate at MIT and previous researcher at
                 <a href="https://www.csail.mit.edu/" target="_blank">MIT CSAIL</a>.
                 I'm currently interested in exploring how machines understand and interact with the physical world.
-                My research interests include multimodal 3D reconstruction, video planning for embodied agents,
-                and extracting latent action models from video.
+                My research interests include <strong>multimodal 3D reconstruction</strong>, <strong>video planning</strong> for embodied agents,
+                and extracting <strong>latent action models</strong> from video.
             </p>
             <p>
                 Previously, I was an undergraduate researcher in both the 
@@ -182,13 +182,78 @@
         </div>
 
         <div class="section">
-            <h2>News</h2>
-            <ul class="news-list">
-                <li><span class="news-date">[ Nov 2025 ]</span> Accepted offer to work with Coinbase for Summer 2026.</li>
-            </ul>
+            <h2>Reading List</h2>
+            <p class="section-subtitle">Papers, posts, and current releases.</p>
+
+            <div class="carousel-wrapper">
+                <div class="carousel-track">
+                    <div class="carousel-card">
+                        <a href="https://waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simulation/" target="_blank" rel="noopener" class="carousel-img-link">
+                            <div class="carousel-img" style="background-image: url('images/reading/waymo_world_model.png')" role="presentation"></div>
+                        </a>
+                        <div class="carousel-body">
+                            <span class="carousel-tag">Post</span>
+                            <h3><a href="https://waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simulation/" target="_blank" rel="noopener">The Waymo World Model</a></h3>
+                            <p>A frontier generative model for hyper-realistic autonomous driving simulation. Built on <a href="https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/" target="_blank" rel="noopener">Genie 3</a> with multi-sensor camera and lidar outputs.</p>
+                            <a href="https://waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simulation/" target="_blank" rel="noopener" class="carousel-meta">Read More</a>
+                        </div>
+                    </div>
+                    <a href="https://www.nvidia.com/en-us/ai/cosmos/" target="_blank" rel="noopener" class="carousel-card">
+                        <div class="carousel-img" style="background-image: url('images/reading/nvidia_cosmos.png')"></div>
+                        <div class="carousel-body">
+                            <span class="carousel-tag">Release</span>
+                            <h3>NVIDIA Cosmos</h3>
+                            <p>NVIDIA's world foundation model platform for physical AI that generates virtual worlds through video generation.</p>
+                            <span class="carousel-meta">Read More</span>
+                        </div>
+                    </a>
+                    <a href="https://www.vincentsitzmann.com/blog/bitter_lesson_of_cv/" target="_blank" rel="noopener" class="carousel-card">
+                        <div class="carousel-img" style="background-image: url('images/reading/bitter_lesson.jpg')"></div>
+                        <div class="carousel-body">
+                            <span class="carousel-tag">Post</span>
+                            <h3>The Bitter Lesson of Computer Vision</h3>
+                            <p>Vincent Sitzmann argues that 3D representations and conventional CV tasks will become obsolete with advances in perception-action frameworks.</p>
+                            <span class="carousel-meta">Read More</span>
+                        </div>
+                    </a>
+                    <a href="https://www.1x.tech/discover/1x-world-model" target="_blank" rel="noopener" class="carousel-card">
+                        <div class="carousel-img" style="background-image: url('images/reading/1x_world_model.avif')"></div>
+                        <div class="carousel-body">
+                            <span class="carousel-tag">Post</span>
+                            <h3>1X World Model</h3>
+                            <p>A learned simulator, trained directly from humanoid robot sensor data, that imagines how the world evolves in response to agent behavior.</p>
+                            <span class="carousel-meta">Read More</span>
+                        </div>
+                    </a>
+                    <a href="https://oasis.decart.ai/welcome" target="_blank" rel="noopener" class="carousel-card">
+                        <div class="carousel-img" style="background-image: url('images/reading/oasis.png')"></div>
+                        <div class="carousel-body">
+                            <span class="carousel-tag">Release</span>
+                            <h3>Oasis by Decart</h3>
+                            <p>Creates playable, interactive worlds in real time from a single generative model.</p>
+                            <span class="carousel-meta">Read More</span>
+                        </div>
+                    </a>
+                    <a href="https://www.boyuan.space/large-video-planner/" target="_blank" rel="noopener" class="carousel-card">
+                        <div class="carousel-img" style="background-image: url('images/reading/large_video_planner.webp')"></div>
+                        <div class="carousel-body">
+                            <span class="carousel-tag">Paper</span>
+                            <h3>Large Video Planner</h3>
+                            <p>A video foundation model for robotics that generates video plans and retargets them into executable robot motions.</p>
+                            <span class="carousel-meta">Read More</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn carousel-prev" aria-label="Previous">&larr;</button>
+                    <div class="carousel-dots"></div>
+                    <button class="carousel-btn carousel-next" aria-label="Next">&rarr;</button>
+                </div>
+            </div>
         </div>
 
     </div>
 
+    <script src="carousel.js"></script>
 </body>
 </html>

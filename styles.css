@@ -85,21 +85,31 @@ a:hover {
 
 /* Sections */
 .section {
-    margin-bottom: 35px;
+    margin-bottom: 55px;
 }
 
 .section h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 900;
     color: #111;
-    margin-bottom: 12px;
-    padding-bottom: 6px;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
     border-bottom: 1px solid #eee;
 }
 
 .section p {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     color: #333;
+    font-size: 1rem;
+}
+
+.section p + p {
+    margin-top: 24px;
+}
+
+/* Compact stacking inside project cards (override section paragraph rhythm) */
+.section .pub-details p + p {
+    margin-top: 0;
 }
 
 /* News */
@@ -109,15 +119,15 @@ a:hover {
 }
 
 .news-list li {
-    margin-bottom: 6px;
-    font-size: 0.95rem;
+    margin-bottom: 8px;
+    font-size: 1rem;
     color: #333;
 }
 
 .news-date {
     font-weight: 700;
     color: #555;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 /* Experience Table */
@@ -131,7 +141,7 @@ a:hover {
 }
 
 .experience-table td {
-    padding: 16px 0;
+    padding: 18px 0;
     border-bottom: 1px solid #f0f0f0;
 }
 
@@ -154,30 +164,30 @@ a:hover {
 }
 
 .exp-body {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: #333;
-    line-height: 1.45;
+    line-height: 1.5;
 }
 
 .exp-body strong {
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: #111;
 }
 
 .exp-org {
     color: #555;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .exp-team {
     color: #888;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-style: italic;
 }
 
 .exp-date {
-    width: 150px;
-    font-size: 0.82rem;
+    width: 155px;
+    font-size: 0.88rem;
     color: #777;
     padding-left: 20px;
     text-align: right;
@@ -188,7 +198,7 @@ a:hover {
 /* Publication / Project Entries */
 .pub-entry {
     display: flex;
-    gap: 20px;
+    gap: 16px;
     margin-bottom: 25px;
     padding-bottom: 25px;
     border-bottom: 1px solid #f0f0f0;
@@ -234,38 +244,206 @@ a:hover {
 
 .pub-title {
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: #111;
-    margin-bottom: 3px !important;
-}
-
-.pub-authors {
-    font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 2px !important;
-}
-
-.pub-venue {
-    font-size: 0.85rem;
-    color: #777;
-    font-style: italic;
     margin-bottom: 6px !important;
 }
 
-.pub-desc {
+.pub-authors {
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 4px !important;
+}
+
+.pub-authors strong {
+    font-weight: 400;
+}
+
+.pub-venue {
     font-size: 0.9rem;
+    color: #777;
+    font-style: italic;
+    margin-bottom: 10px !important;
+}
+
+.pub-desc {
+    font-size: 0.95rem;
     color: #555;
     margin-bottom: 0 !important;
+    margin-top: 0 !important;
 }
 
 .pub-links {
     font-size: 0.9rem;
-    margin-top: 8px !important;
+    margin-top: 10px !important;
     margin-bottom: 0 !important;
 }
 
 .pub-links a {
     font-weight: 700;
+}
+
+/* Section subtitle */
+.section-subtitle {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: -8px;
+    margin-bottom: 16px;
+}
+
+/* Carousel / Reading List */
+.carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-card {
+    flex: 0 0 calc(33.333% - 14px);
+    margin-right: 20px;
+    background: #f7f7f7;
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.carousel-card:hover {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+    color: inherit;
+}
+
+.carousel-img {
+    width: 100%;
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+    background-color: #e0e0e0;
+}
+
+.carousel-body {
+    padding: 14px 16px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: #111;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    align-self: flex-start;
+}
+
+.carousel-card h3 {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.carousel-card p {
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.45;
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.carousel-meta {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #1772d0;
+    margin-top: 10px;
+    text-decoration: none;
+    align-self: flex-start;
+}
+
+.carousel-card:hover .carousel-meta {
+    color: #f09228;
+}
+
+.carousel-img-link {
+    display: block;
+    flex-shrink: 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+.carousel-body h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.carousel-body h3 a:hover {
+    color: #1772d0;
+}
+
+.carousel-body p a {
+    font-weight: 700;
+}
+
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 18px;
+}
+
+.carousel-btn {
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.carousel-btn:hover {
+    border-color: #111;
+    color: #111;
+}
+
+.carousel-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.carousel-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+.carousel-dots .dot.active {
+    background: #333;
 }
 
 /* Footer */
@@ -325,5 +503,9 @@ footer {
 
     .experience-table td {
         display: block;
+    }
+
+    .carousel-card {
+        flex: 0 0 calc(100% - 20px);
     }
 }
