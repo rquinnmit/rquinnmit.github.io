@@ -54,7 +54,7 @@
 
     function startAuto() {
         stopAuto();
-        autoInterval = setInterval(next, 4000);
+        autoInterval = setInterval(next, 6000);
     }
 
     function stopAuto() {
