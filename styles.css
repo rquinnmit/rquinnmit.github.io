@@ -4,22 +4,26 @@
     box-sizing: border-box;
 }
 
+html {
+    color-scheme: dark;
+}
+
 body {
     font-family: 'Lato', sans-serif;
     font-size: 16px;
     line-height: 1.6;
-    color: #333;
-    background: #fff;
+    color: #c7cad1;
+    background: #1a1c21;
     -webkit-font-smoothing: antialiased;
 }
 
 a {
-    color: #1772d0;
+    color: #6aa8e0;
     text-decoration: none;
 }
 
 a:hover {
-    color: #f09228;
+    color: #f0a75c;
 }
 
 .container {
@@ -42,7 +46,7 @@ a:hover {
     height: 270px;
     border-radius: 50%;
     overflow: hidden;
-    background: #e8e8e8;
+    background: #2a2d33;
 }
 
 .profile-photo-img {
@@ -61,14 +65,14 @@ a:hover {
 .profile-info h1 {
     font-size: 2.6rem;
     font-weight: 900;
-    color: #111;
+    color: #f0f1f3;
     margin-bottom: 16px;
     letter-spacing: -0.02em;
 }
 
 .header-line {
     font-size: 1.05rem;
-    color: #444;
+    color: #9a9eaa;
     margin-bottom: 10px;
 }
 
@@ -91,15 +95,15 @@ a:hover {
 .section h2 {
     font-size: 1.6rem;
     font-weight: 900;
-    color: #111;
+    color: #f0f1f3;
     margin-bottom: 14px;
     padding-bottom: 8px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #33363e;
 }
 
 .section p {
     margin-bottom: 12px;
-    color: #333;
+    color: #c7cad1;
     font-size: 1rem;
 }
 
@@ -121,12 +125,12 @@ a:hover {
 .news-list li {
     margin-bottom: 8px;
     font-size: 1rem;
-    color: #333;
+    color: #c7cad1;
 }
 
 .news-date {
     font-weight: 700;
-    color: #555;
+    color: #9a9eaa;
     font-size: 0.95rem;
 }
 
@@ -142,7 +146,7 @@ a:hover {
 
 .experience-table td {
     padding: 18px 0;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #2a2d33;
 }
 
 .experience-table tr:last-child td {
@@ -150,7 +154,7 @@ a:hover {
 }
 
 .experience-table tr.experience-row-last td {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #3a3d46;
 }
 
 .exp-logo {
@@ -164,27 +168,29 @@ a:hover {
     height: 60px;
     object-fit: contain;
     border-radius: 8px;
-    border: 1px solid #eee;
+    border: 1px solid #33363e;
+    background: #f2f2f0;
+    padding: 6px;
 }
 
 .exp-body {
     font-size: 1rem;
-    color: #333;
+    color: #c7cad1;
     line-height: 1.5;
 }
 
 .exp-body strong {
     font-size: 1.05rem;
-    color: #111;
+    color: #f0f1f3;
 }
 
 .exp-org {
-    color: #555;
+    color: #9a9eaa;
     font-size: 0.95rem;
 }
 
 .exp-team {
-    color: #888;
+    color: #74788c;
     font-size: 0.9rem;
     font-style: italic;
 }
@@ -192,7 +198,7 @@ a:hover {
 .exp-date {
     width: 155px;
     font-size: 0.88rem;
-    color: #777;
+    color: #83879a;
     padding-left: 20px;
     text-align: right;
     white-space: nowrap;
@@ -205,7 +211,7 @@ a:hover {
     gap: 16px;
     margin-bottom: 25px;
     padding-bottom: 25px;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #2a2d33;
 }
 
 .pub-entry:last-child {
@@ -224,22 +230,22 @@ a:hover {
     object-fit: cover;
     object-position: top center;
     border-radius: 4px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #33363e;
     display: block;
 }
 
 .pub-image-placeholder {
     width: 170px;
     height: 120px;
-    background: #f5f5f5;
-    border: 1px solid #e0e0e0;
+    background: #24262c;
+    border: 1px solid #33363e;
     border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
     font-weight: 700;
-    color: #aaa;
+    color: #6b6f7a;
 }
 
 .pub-details {
@@ -249,14 +255,14 @@ a:hover {
 .pub-title {
     font-weight: 700;
     font-size: 1.05rem;
-    color: #111;
+    color: #f0f1f3;
     margin-bottom: 6px !important;
 }
 
 .pub-authors {
     font-size: 0.88rem;
     font-weight: 400;
-    color: #666;
+    color: #9a9eaa;
     margin-bottom: 4px !important;
 }
 
@@ -266,14 +272,14 @@ a:hover {
 
 .pub-venue {
     font-size: 0.9rem;
-    color: #777;
+    color: #83879a;
     font-style: italic;
     margin-bottom: 10px !important;
 }
 
 .pub-desc {
     font-size: 0.95rem;
-    color: #555;
+    color: #a9adb6;
     margin-bottom: 0 !important;
     margin-top: 0 !important;
 }
@@ -291,7 +297,7 @@ a:hover {
 /* Section subtitle */
 .section-subtitle {
     font-size: 0.9rem;
-    color: #777;
+    color: #83879a;
     margin-top: -8px;
     margin-bottom: 16px;
 }
@@ -310,7 +316,7 @@ a:hover {
 .carousel-card {
     flex: 0 0 calc(33.333% - 14px);
     margin-right: 20px;
-    background: #f7f7f7;
+    background: #22242a;
     border-radius: 10px;
     overflow: hidden;
     text-decoration: none;
@@ -321,7 +327,7 @@ a:hover {
 }
 
 .carousel-card:hover {
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
     transform: translateY(-3px);
     color: inherit;
 }
@@ -331,7 +337,7 @@ a:hover {
     height: 160px;
     background-size: cover;
     background-position: center;
-    background-color: #e0e0e0;
+    background-color: #2a2d33;
 }
 
 .carousel-body {
@@ -347,8 +353,8 @@ a:hover {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    background: #111;
-    color: #fff;
+    background: #e8e9ec;
+    color: #1a1c21;
     padding: 2px 8px;
     border-radius: 3px;
     margin-bottom: 8px;
@@ -358,14 +364,14 @@ a:hover {
 .carousel-card h3 {
     font-size: 0.98rem;
     font-weight: 700;
-    color: #111;
+    color: #f0f1f3;
     margin-bottom: 6px;
     line-height: 1.3;
 }
 
 .carousel-card p {
     font-size: 0.88rem;
-    color: #555;
+    color: #a9adb6;
     line-height: 1.45;
     flex: 1;
     margin-bottom: 0;
@@ -374,14 +380,14 @@ a:hover {
 .carousel-meta {
     font-size: 0.8rem;
     font-weight: 700;
-    color: #1772d0;
+    color: #6aa8e0;
     margin-top: 10px;
     text-decoration: none;
     align-self: flex-start;
 }
 
 .carousel-card:hover .carousel-meta {
-    color: #f09228;
+    color: #f0a75c;
 }
 
 .carousel-img-link {
@@ -397,7 +403,7 @@ a:hover {
 }
 
 .carousel-body h3 a:hover {
-    color: #1772d0;
+    color: #6aa8e0;
 }
 
 .carousel-body p a {
@@ -414,13 +420,13 @@ a:hover {
 
 .carousel-btn {
     background: none;
-    border: 1px solid #ddd;
+    border: 1px solid #3a3d46;
     border-radius: 50%;
     width: 34px;
     height: 34px;
     font-size: 1rem;
     cursor: pointer;
-    color: #555;
+    color: #9a9eaa;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -428,8 +434,8 @@ a:hover {
 }
 
 .carousel-btn:hover {
-    border-color: #111;
-    color: #111;
+    border-color: #e8e9ec;
+    color: #e8e9ec;
 }
 
 .carousel-dots {
@@ -441,23 +447,23 @@ a:hover {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #ccc;
+    background: #3a3d46;
     transition: background 0.2s;
     cursor: pointer;
 }
 
 .carousel-dots .dot.active {
-    background: #333;
+    background: #e8e9ec;
 }
 
 /* Footer */
 footer {
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #2f323a;
     text-align: center;
     font-size: 0.8rem;
-    color: #999;
+    color: #6b6f7a;
 }
 
 /* Responsive */
@@ -509,13 +515,13 @@ footer {
         column-gap: 12px;
         row-gap: 2px;
         padding: 16px 0;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid #2f323a;
         width: 100%;
         border-top: none;
     }
 
     .experience-table tr.experience-row-last {
-        border-bottom: 2px solid #ddd;
+        border-bottom: 2px solid #3a3d46;
     }
 
     /* Strip per-cell borders (they stack as lines around dates); separators live on tr only */
