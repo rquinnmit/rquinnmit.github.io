@@ -50,8 +50,12 @@ hover states. On a page this quiet it becomes the subject if used more.
 Header nav order matches document order exactly, top to bottom:
 
 ```
-Hero → Sets → Photos → About → Played → Booking → Footer
+Hero → Sets → Photos → Played → Booking → Footer
 ```
+
+The page carries no prose. There is no About section and no body copy anywhere — the
+only words are the wordmark, section labels, set titles, dates, venues, and the booking
+address. `MIT | Boston, MA` in the hero is the entire self-description.
 
 ### Hero
 
@@ -100,11 +104,6 @@ sections do not visually rhyme. Small monospace index in the corner of each shot
 No lightbox. Clicking a photo does nothing — this was accepted in exchange for the page
 shipping with zero JavaScript.
 
-### About
-
-Two sentences, maximum. Names him, names the city, names the format. No genre claim
-narrower than "open format" (see below).
-
 ### Played
 
 Date / venue / city rows on hairline dividers. Sits immediately above Booking on
@@ -130,8 +129,8 @@ sets. An earlier draft carried a `House & Tech House` tagline that the grid bene
 would have contradicted.
 
 Resolved by removing every genre claim from the page. The hero reads `MIT | Boston, MA`
-and About says "open format." This matches the SoundCloud bio, which reads only
-"MIT DJ."
+and nothing anywhere states a genre — individual set titles name their own. This matches
+the SoundCloud bio, which reads only "MIT DJ."
 
 ## Cross-linking
 
