@@ -61,8 +61,20 @@ address. `MIT | Boston, MA` in the hero is the entire self-description.
 
 Centered and nearly empty. Wordmark `DIFFUSION` at 92px on desktop, scaling fluidly
 down to roughly 40px at 375px via `clamp()`. One monospace line reading
-`MIT | Boston, MA`, and three social icons (SoundCloud, Instagram, email). No photo,
-no button, no scroll cue.
+`MIT | Boston, MA`, and four social icons (SoundCloud, Instagram, email, and a globe
+linking back to the research site). No photo, no button, no scroll cue.
+
+The wordmark carries the page's one animation, and it is the only animation on the
+page: a violet outline of the letterforms revealed through a narrow travelling mask,
+so a lit hairline sweeps across the edges every 5.5 seconds. Only the stroke is ever
+lit; the bone fill never changes, and nothing moves in layout. It is pure CSS, so the
+page keeps its zero-JavaScript property.
+
+Under `prefers-reduced-motion` the pseudo-element is removed outright rather than
+merely having its animation stopped — stopping it would freeze the mask mid-travel and
+leave a violet outline stuck across part of the word. The `<h1>` carries
+`aria-label="Diffusion"` so the duplicated text in the pseudo-element is never
+announced twice.
 
 ### Sets
 
