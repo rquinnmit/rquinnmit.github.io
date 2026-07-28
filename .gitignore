@@ -1,2 +1,6 @@
 .DS_Store
 .superpowers/
+
+# Planning artifacts. GitHub Pages serves whatever is in the branch, so tracking
+# these would publish them at rquinnmit.github.io/docs/superpowers/...
+docs/
