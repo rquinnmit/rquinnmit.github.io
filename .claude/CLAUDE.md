@@ -47,12 +47,17 @@ fabricated — name the exact filename the entry expects and leave the reference
 
 ## DJ site (`/music/`)
 
-Ryan performs as Diffusion. Sections are `#sets`, `#photos`, `#played`, and
-`#booking` — there is deliberately no About section.
+Ryan performs as Diffusion. Sections are `#upcoming`, `#sets`, `#photos`,
+`#played`, and `#booking` — there is deliberately no About section.
+
+`#upcoming` and `#played` share one grid, so a show moves between them by
+editing its date and dropping `gig--next`. Upcoming rows are links to the ticket
+page and carry a day-level date (`Aug 29`); played rows carry month and year
+(`May 2026`). The row template lives in an HTML comment above the rows.
 
 The centered title runs a noise-to-clarity diffusion animation built by clipping
 noise to the letterforms and revealing three states through their own masks.
-`music/music.css:724` has a `@media (prefers-reduced-motion: reduce)` block, and
+`music/music.css:747` has a `@media (prefers-reduced-motion: reduce)` block, and
 that OS setting has twice been mistaken for the animation being broken. Check it
 before debugging any animation here.
 
