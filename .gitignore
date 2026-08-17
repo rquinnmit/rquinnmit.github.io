@@ -4,3 +4,7 @@
 # Planning artifacts. GitHub Pages serves whatever is in the branch, so tracking
 # these would publish them at rquinnmit.github.io/docs/superpowers/...
 docs/
+
+# Claude Code instructions. Kept local: Pages serves whatever is in the
+# branch, so a tracked CLAUDE.md is published at rquinnmit.github.io/CLAUDE.md.
+CLAUDE.md
