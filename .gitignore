@@ -5,6 +5,7 @@
 # these would publish them at rquinnmit.github.io/docs/superpowers/...
 docs/
 
-# Claude Code instructions. Kept local: Pages serves whatever is in the
-# branch, so a tracked CLAUDE.md is published at rquinnmit.github.io/CLAUDE.md.
-CLAUDE.md
+# Claude Code instructions live at .claude/CLAUDE.md, not the repo root. Pages
+# serves whatever is in the branch, so a root CLAUDE.md gets published at
+# rquinnmit.github.io/CLAUDE.md — dot-directories are not served.
+/CLAUDE.md
