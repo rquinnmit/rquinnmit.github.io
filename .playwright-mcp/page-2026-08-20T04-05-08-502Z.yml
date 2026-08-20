@@ -1,0 +1,110 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link "DIFFUSION" [ref=e3] [cursor=pointer]:
+      - /url: "#top"
+    - generic [ref=e4]:
+      - link "Upcoming" [ref=e5] [cursor=pointer]:
+        - /url: "#upcoming"
+      - link "Sets" [ref=e6] [cursor=pointer]:
+        - /url: "#sets"
+      - link "Photos" [ref=e7] [cursor=pointer]:
+        - /url: "#photos"
+      - link "Played" [ref=e8] [cursor=pointer]:
+        - /url: "#played"
+      - link "Booking" [ref=e9] [cursor=pointer]:
+        - /url: "#booking"
+  - banner [ref=e10]:
+    - heading "Diffusion" [level=1] [ref=e11]:
+      - text: DIFFUSION
+      - generic [ref=e12]:
+        - text: DIFFUSION
+        - generic [ref=e13]: DIFFUSION
+      - text: DIFFUSION
+    - paragraph [ref=e14]: MIT | Boston, MA
+    - paragraph [ref=e15]:
+      - link "SoundCloud" [ref=e16] [cursor=pointer]:
+        - /url: https://soundcloud.com/rquinn1
+      - link "Instagram" [ref=e19] [cursor=pointer]:
+        - /url: https://www.instagram.com/djdiffusionmusic/
+      - link "Email" [ref=e24] [cursor=pointer]:
+        - /url: mailto:djdiffusionmusic@gmail.com
+  - main [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - heading "Upcoming" [level=2] [ref=e31]
+        - generic [ref=e32]: Location
+      - link "Aug 29 Aziman Tribe’s Last Cruise New York Tickets ↗" [ref=e33] [cursor=pointer]:
+        - /url: https://posh.vip/e/last-cruise-summer-season-finale-house-music-party
+        - generic [ref=e34]: Aug 29
+        - generic [ref=e35]: Aziman Tribe’s Last Cruise
+        - generic [ref=e36]: New York
+        - generic [ref=e37]: Tickets ↗
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - heading "Sets" [level=2] [ref=e40]
+        - generic [ref=e41]: 6 sets
+      - generic [ref=e42]:
+        - link "Artwork for Minimal House & Indie Dance, B2B with Rinzler Minimal House & Indie Dance (B2B Rinzler) Jul 2026 · 51:29" [ref=e43] [cursor=pointer]:
+          - /url: https://soundcloud.com/rquinn1/diffusion-rinzler-minimal
+          - img "Artwork for Minimal House & Indie Dance, B2B with Rinzler" [ref=e44]
+          - generic [ref=e45]: Minimal House & Indie Dance (B2B Rinzler)
+          - generic [ref=e46]: Jul 2026 · 51:29
+        - link "Artwork for Late Night Mix Late Night Mix — Hip Hop, R&B, Pop Apr 2026 · 40:35" [ref=e47] [cursor=pointer]:
+          - /url: https://soundcloud.com/rquinn1/rq-late-night-mix-hip-hip-r-b
+          - img "Artwork for Late Night Mix" [ref=e48]
+          - generic [ref=e49]: Late Night Mix — Hip Hop, R&B, Pop
+          - generic [ref=e50]: Apr 2026 · 40:35
+        - link "Artwork for Tech House Mix Tech House Mix Feb 2026 · 46:58" [ref=e51] [cursor=pointer]:
+          - /url: https://soundcloud.com/rquinn1/rq-house-mix
+          - img "Artwork for Tech House Mix" [ref=e52]
+          - generic [ref=e53]: Tech House Mix
+          - generic [ref=e54]: Feb 2026 · 46:58
+        - link "Artwork for R&B Mix R&B Mix Jan 2026 · 39:48" [ref=e55] [cursor=pointer]:
+          - /url: https://soundcloud.com/rquinn1/rq-rb-mix
+          - img "Artwork for R&B Mix" [ref=e56]
+          - generic [ref=e57]: R&B Mix
+          - generic [ref=e58]: Jan 2026 · 39:48
+        - link "Artwork for Trap Mix Trap Mix Jun 2025 · 55:11" [ref=e59] [cursor=pointer]:
+          - /url: https://soundcloud.com/rquinn1/rq-trap-mix
+          - img "Artwork for Trap Mix" [ref=e60]
+          - generic [ref=e61]: Trap Mix
+          - generic [ref=e62]: Jun 2025 · 55:11
+        - link "Artwork for Party Set Party Set May 2025 · 53:11" [ref=e63] [cursor=pointer]:
+          - /url: https://soundcloud.com/rquinn1/dj-party-set
+          - img "Artwork for Party Set" [ref=e64]
+          - generic [ref=e65]: Party Set
+          - generic [ref=e66]: May 2025 · 53:11
+    - generic [ref=e67]:
+      - heading "Photos" [level=2] [ref=e69]
+      - region "Photos from shows" [ref=e70]:
+        - figure "01":
+          - img "Diffusion playing to a basement room, lit only by the controller"
+        - figure "02":
+          - img "Close-up of the controller under blue light mid-set"
+        - figure "03":
+          - img "Playing a back-to-back set on a boat, the Manhattan skyline behind the booth"
+    - generic [ref=e74]:
+      - generic [ref=e75]:
+        - heading "Played" [level=2] [ref=e76]
+        - generic [ref=e77]: Location
+      - generic [ref=e78]:
+        - generic [ref=e79]: MAY 2026
+        - generic [ref=e80]: MIT SpringFest Opener
+        - generic [ref=e81]: Cambridge
+      - generic [ref=e82]:
+        - generic [ref=e83]: NOV 2025
+        - generic [ref=e84]: MIT Disorientation
+        - generic [ref=e85]: Cambridge
+      - generic [ref=e86]:
+        - generic [ref=e87]: APR 2025
+        - generic [ref=e88]: Venu Nightclub
+        - generic [ref=e89]: Boston
+    - generic [ref=e90]:
+      - heading "Booking" [level=2] [ref=e91]
+      - link "djdiffusionmusic@gmail.com" [ref=e92] [cursor=pointer]:
+        - /url: mailto:djdiffusionmusic@gmail.com
+  - contentinfo [ref=e93]:
+    - generic [ref=e94]: Diffusion © 2026
+    - link "Ryan Quinn" [ref=e95] [cursor=pointer]:
+      - /url: ../
+      - text: Ryan Quinn ↗
