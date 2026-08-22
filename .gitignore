@@ -9,3 +9,11 @@ docs/
 # serves whatever is in the branch, so a root CLAUDE.md gets published at
 # rquinnmit.github.io/CLAUDE.md — dot-directories are not served.
 /CLAUDE.md
+
+# Playwright MCP dumps page snapshots here, one file per capture. They are
+# debugging scratch, and Pages would serve them from a non-dot path.
+.playwright-mcp/
+
+# Machine-local permissions and preferences. The allow-list carries absolute
+# scratchpad paths from this machine.
+.claude/settings.local.json
