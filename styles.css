@@ -462,10 +462,21 @@ footer {
 
 /* Responsive */
 @media (max-width: 600px) {
+    .container {
+        padding: 28px 20px;
+    }
+
     .header {
         flex-direction: column;
         text-align: center;
         gap: 20px;
+        margin-bottom: 32px;
+    }
+
+    /* At 270px the photo alone fills most of a phone's first screen. */
+    .profile-photo {
+        width: 180px;
+        height: 180px;
     }
 
     .profile-info {
@@ -474,20 +485,27 @@ footer {
 
     .profile-info h1 {
         font-size: 2rem;
+        margin-bottom: 12px;
+    }
+
+    /* Tightened so all five links sit on one line at 320px; at the desktop
+       word-spacing the last one wrapped alone behind a trailing slash. */
+    .links-row {
+        font-size: 0.92rem;
+        word-spacing: 0.1em;
     }
 
     .pub-entry {
         flex-direction: column;
     }
 
-    .pub-image img {
-        width: 100%;
-        height: 120px;
-    }
-
+    /* Stretching the 170x120 thumbnail to full width at a fixed 120px height
+       cropped the screenshots to a strip; keep the desktop crop ratio instead. */
+    .pub-image img,
     .pub-image-placeholder {
         width: 100%;
-        height: 120px;
+        height: auto;
+        aspect-ratio: 170 / 120;
     }
 
     /* Experience: one cohesive card per row (logo + details + dates, single divider) */
