@@ -57,9 +57,18 @@ page and carry a day-level date (`Aug 29`); played rows carry month and year
 
 The centered title runs a noise-to-clarity diffusion animation built by clipping
 noise to the letterforms and revealing three states through their own masks.
-`music/music.css:747` has a `@media (prefers-reduced-motion: reduce)` block, and
+`music/music.css:748` has a `@media (prefers-reduced-motion: reduce)` block, and
 that OS setting has twice been mistaken for the animation being broken. Check it
 before debugging any animation here.
+
+The entrance plays on phones too. Until 2026-08-28 the `@media (max-width: 600px)`
+block at `music/music.css:716` hid it outright; it now swaps the middle layer to
+`#mark-noise-mid-sm` in `music/index.html`, a twin of `#mark-noise-mid` with every
+absolute length halved so the tearing stays proportionate to 50px glyphs. If the
+two filters ever diverge, change both. Verified at 375px and 320px in Playwright
+only, never on phone hardware. To see a phone width, use Playwright's
+`browser_resize`: the Chrome MCP's `resize_window` reports success but leaves
+`innerWidth` unchanged on a maximized window.
 
 ## Ignored on purpose
 
