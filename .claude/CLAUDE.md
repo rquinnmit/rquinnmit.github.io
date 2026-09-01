@@ -14,8 +14,13 @@ Because every file is hand-authored, never reformat HTML or CSS wholesale. Match
 the surrounding indentation and leave untouched lines untouched.
 
 Layout: `index.html` and `styles.css` at the root with `carousel.js`;
-`music/index.html` and `music/music.css` for the DJ site; assets under `images/`,
-`papers/`, and `resumes/`.
+`music/index.html`, `music/music.css`, and `music/show.js` for the DJ site;
+assets under `images/`, `papers/`, and `resumes/`.
+
+To look at a page in Playwright, serve the repo over HTTP first (`python3 -m
+http.server`); the Playwright MCP refuses `file:` URLs. Navigating from a URL to
+the same URL plus a hash is a fragment navigation and does not reload the
+document, so add a throwaway query string when a reload is the point.
 
 ## Reading list
 
@@ -56,10 +61,12 @@ page and carry a day-level date (`Aug 29`); played rows carry month and year
 (`May 2026`). The row template lives in an HTML comment above the rows.
 
 `#upcoming` stays on the page when nothing is booked. Ryan decided this on
-2026-09-01: with no rows it shows a `gig-empty` line under a plain `sechead`,
-and the `sechead--cols` header with its Location label comes back with the
-first row. The HTML comment in the section shows both forms. Never delete the
-section or its nav link.
+2026-09-01: with no rows it is a plain `sechead` over blank space, with no
+empty-state line, and the `sechead--cols` header with its Location label comes
+back with the first row. The HTML comment in the section shows both forms.
+Never delete the section or its nav link, and never add a "nothing here"
+message; blank space is his chosen signal for that, here and in a show panel
+with no media yet.
 
 A Played row can open a show dialog over the page: a SoundCloud recording, a
 video embed, and photos from that night in a centred panel with the page
@@ -77,16 +84,16 @@ photo, reusing the Sets grid's `tile-art` and `tile-meta` classes. A show with
 no grid narrows to one column. The template comment above the first section
 shows the full form. Photos for a show live under
 `images/music/shows/<slug>/`; video and audio are always embeds, never local
-files. The cruise holds one `show-empty` line until its media exists.
+files. The cruise holds only its title and date until its media exists.
 
 The centered title runs a noise-to-clarity diffusion animation built by clipping
 noise to the letterforms and revealing three states through their own masks.
-`music/music.css:748` has a `@media (prefers-reduced-motion: reduce)` block, and
+`music/music.css:873` has a `@media (prefers-reduced-motion: reduce)` block, and
 that OS setting has twice been mistaken for the animation being broken. Check it
 before debugging any animation here.
 
 The entrance plays on phones too. Until 2026-08-28 the `@media (max-width: 600px)`
-block at `music/music.css:716` hid it outright; it now swaps the middle layer to
+block at `music/music.css:837` hid it outright; it now swaps the middle layer to
 `#mark-noise-mid-sm` in `music/index.html`, a twin of `#mark-noise-mid` with every
 absolute length halved so the tearing stays proportionate to 50px glyphs. If the
 two filters ever diverge, change both. Verified at 375px and 320px in Playwright
