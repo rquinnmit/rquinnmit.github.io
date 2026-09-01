@@ -55,6 +55,12 @@ editing its date and dropping `gig--next`. Upcoming rows are links to the ticket
 page and carry a day-level date (`Aug 29`); played rows carry month and year
 (`May 2026`). The row template lives in an HTML comment above the rows.
 
+`#upcoming` stays on the page when nothing is booked. Ryan decided this on
+2026-09-01: with no rows it shows a `gig-empty` line under a plain `sechead`,
+and the `sechead--cols` header with its Location label comes back with the
+first row. The HTML comment in the section shows both forms. Never delete the
+section or its nav link.
+
 The centered title runs a noise-to-clarity diffusion animation built by clipping
 noise to the letterforms and revealing three states through their own masks.
 `music/music.css:748` has a `@media (prefers-reduced-motion: reduce)` block, and
