@@ -61,6 +61,18 @@ and the `sechead--cols` header with its Location label comes back with the
 first row. The HTML comment in the section shows both forms. Never delete the
 section or its nav link.
 
+A Played row can open a show page: photos, a video embed, and a SoundCloud
+recording for that night. The row's `gig-venue` becomes a `<button
+aria-controls="show-<slug>">`, the row takes `gig--show` and a `gig-note`
+listing what is inside, and a hidden `<section class="show" id="show-<slug>">`
+after the rows holds the content. `music/show.js` opens it, mirrors the open
+show as `#show/<slug>` so back and shared links work, and copies `data-src` to
+`src` on embeds the first time a show opens. Bands are optional per show. The
+template comment above the first section shows the full form. Photos for a
+show live under `images/music/shows/<slug>/`; video and audio are always embeds,
+never local files. The cruise ships with three `show-empty` placeholder bands
+until its media exists.
+
 The centered title runs a noise-to-clarity diffusion animation built by clipping
 noise to the letterforms and revealing three states through their own masks.
 `music/music.css:748` has a `@media (prefers-reduced-motion: reduce)` block, and
