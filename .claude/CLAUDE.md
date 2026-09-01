@@ -78,13 +78,14 @@ mark. `music/show.js` opens it, mirrors the open show as `#show/<slug>` so back
 and shared links work, closes on Escape, the Close control, or a click on the
 backdrop, and copies `data-src` to `src` on embeds the first time a show opens.
 The panel has two halves and no labels, modelled on a label's release page
-Ryan supplied: `show-lead` on the left holds the video, title, date and city,
-and the SoundCloud player; `show-grid` on the right is one `show-tile` per
-photo, reusing the Sets grid's `tile-art` and `tile-meta` classes. A show with
-no grid narrows to one column. The template comment above the first section
-shows the full form. Photos for a show live under
+Ryan supplied: `show-lead` on the left holds the video, the title, and the
+SoundCloud player, with no date or city line; `show-grid` on the right is one
+`show-tile` per photo, reusing the Sets grid's `tile-art` and `tile-meta`
+classes. A show with no grid narrows to one column. The close control is a
+bare ✕ with an aria-label, no word. The template comment above the first
+section shows the full form. Photos for a show live under
 `images/music/shows/<slug>/`; video and audio are always embeds, never local
-files. The cruise holds only its title and date until its media exists.
+files. The cruise holds only its title until its media exists.
 
 The centered title runs a noise-to-clarity diffusion animation built by clipping
 noise to the letterforms and revealing three states through their own masks.
