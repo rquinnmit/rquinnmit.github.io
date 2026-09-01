@@ -78,23 +78,26 @@ mark. `music/show.js` opens it, mirrors the open show as `#show/<slug>` so back
 and shared links work, closes on Escape, the Close control, or a click on the
 backdrop, and copies `data-src` to `src` on embeds the first time a show opens.
 The panel has two halves and no labels, modelled on a label's release page
-Ryan supplied: `show-lead` on the left holds the video, the title, and the
-SoundCloud player, with no date or city line; `show-grid` on the right is one
-`show-tile` per photo, reusing the Sets grid's `tile-art` and `tile-meta`
-classes. A show with no grid narrows to one column. The close control is a
-bare ✕ with an aria-label, no word. The template comment above the first
-section shows the full form. Photos for a show live under
-`images/music/shows/<slug>/`; video and audio are always embeds, never local
-files. The cruise holds only its title until its media exists.
+Ryan supplied: `show-lead` on the left holds the video, the title, a `show-link`
+to the event's ticket-page listing, and the SoundCloud player, with no date or
+city line; `show-grid` on the right is one `show-tile` per photo, reusing the
+Sets grid's `tile-art` and `tile-meta` classes. A show with no grid narrows to
+one column. The close control is a bare ✕ with an aria-label, no word. The
+template comment above the first section shows the full form. Photos for a show
+live under `images/music/shows/<slug>/`; video and audio are always embeds,
+never local files. The cruise holds its title and its posh.vip listing until its
+media exists. That link is proof the gig happened, not an attempt to sell a
+passed date, so it sits in the same faint mono register as a `gig-note` and
+reads "Event listing" rather than "Tickets".
 
 The centered title runs a noise-to-clarity diffusion animation built by clipping
 noise to the letterforms and revealing three states through their own masks.
-`music/music.css:856` has a `@media (prefers-reduced-motion: reduce)` block, and
+`music/music.css:869` has a `@media (prefers-reduced-motion: reduce)` block, and
 that OS setting has twice been mistaken for the animation being broken. Check it
 before debugging any animation here.
 
 The entrance plays on phones too. Until 2026-08-28 the `@media (max-width: 600px)`
-block at `music/music.css:820` hid it outright; it now swaps the middle layer to
+block at `music/music.css:833` hid it outright; it now swaps the middle layer to
 `#mark-noise-mid-sm` in `music/index.html`, a twin of `#mark-noise-mid` with every
 absolute length halved so the tearing stays proportionate to 50px glyphs. If the
 two filters ever diverge, change both. Verified at 375px and 320px in Playwright
