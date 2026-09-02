@@ -2,7 +2,10 @@
 
 Ryan's personal site. Origin `rquinnmit/rquinnmit.github.io`, public, default
 branch `main`, served by GitHub Pages on push. Two sites in one repo: the
-professional site at `/` and the DJ site at `/music/`. Each links to the other.
+professional site at `/` and the DJ site at `/music/`. The link runs one way: the
+professional site points at `/music/`, but the DJ site no longer points back.
+Ryan removed its footer link on 2026-09-01, and that was the only path from
+`/music/` to `/`.
 
 ## Stack
 
