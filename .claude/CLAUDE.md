@@ -92,12 +92,12 @@ reads "Event listing" rather than "Tickets".
 
 The centered title runs a noise-to-clarity diffusion animation built by clipping
 noise to the letterforms and revealing three states through their own masks.
-`music/music.css:885` has a `@media (prefers-reduced-motion: reduce)` block, and
+`music/music.css:888` has a `@media (prefers-reduced-motion: reduce)` block, and
 that OS setting has twice been mistaken for the animation being broken. Check it
 before debugging any animation here.
 
 The entrance plays on phones too. Until 2026-08-28 the `@media (max-width: 600px)`
-block at `music/music.css:849` hid it outright; it now swaps the middle layer to
+block at `music/music.css:852` hid it outright; it now swaps the middle layer to
 `#mark-noise-mid-sm` in `music/index.html`, a twin of `#mark-noise-mid` with every
 absolute length halved so the tearing stays proportionate to 50px glyphs. If the
 two filters ever diverge, change both. Verified at 375px and 320px in Playwright
