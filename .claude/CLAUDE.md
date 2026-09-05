@@ -1,11 +1,14 @@
 # Website — rquinnmit.github.io
 
-Ryan's personal site. Origin `rquinnmit/rquinnmit.github.io`, public, default
-branch `main`, served by GitHub Pages on push. Two sites in one repo: the
-professional site at `/` and the DJ site at `/music/`. The link runs one way: the
-professional site points at `/music/`, but the DJ site no longer points back.
-Ryan removed its footer link on 2026-09-01, and that was the only path from
-`/music/` to `/`.
+Ryan's professional site. Origin `rquinnmit/rquinnmit.github.io`, public, default
+branch `main`, served by GitHub Pages on push. The DJ site he performs under as
+Diffusion lived here at `/music/` until 2026-09-05 and now has its own repo,
+`rquinnmit/diffusion` at `/Users/rquinn1/Personal/Diffusion`, served at
+`https://diffusiondj.com`. All that remains of it here is `music/index.html`, a
+redirect stub that forwards to the domain and carries the `#show/<slug>` hash
+across so shared show links keep working. Never delete that stub. The two Music
+links on the front page point straight at the domain, and the DJ site
+deliberately does not link back.
 
 ## Stack
 
@@ -16,9 +19,9 @@ step, no test suite.** There is nothing to run before shipping, and claiming
 Because every file is hand-authored, never reformat HTML or CSS wholesale. Match
 the surrounding indentation and leave untouched lines untouched.
 
-Layout: `index.html` and `styles.css` at the root with `carousel.js`;
-`music/index.html`, `music/music.css`, and `music/show.js` for the DJ site;
-assets under `images/`, `papers/`, and `resumes/`.
+Layout: `index.html` and `styles.css` at the root with `carousel.js`; the
+redirect stub at `music/index.html`; assets under `images/`, `papers/`, and
+`resumes/`.
 
 To look at a page in Playwright, serve the repo over HTTP first (`python3 -m
 http.server`); the Playwright MCP refuses `file:` URLs. Navigating from a URL to
@@ -52,61 +55,6 @@ size, not of the HTML.
 
 Every entry needs a local `.webp` under `images/reading/`. That file cannot be
 fabricated — name the exact filename the entry expects and leave the reference.
-
-## DJ site (`/music/`)
-
-Ryan performs as Diffusion. Sections are `#upcoming`, `#sets`, `#photos`,
-`#played`, and `#booking` — there is deliberately no About section.
-
-`#upcoming` and `#played` share one grid, so a show moves between them by
-editing its date and dropping `gig--next`. Upcoming rows are links to the ticket
-page and carry a day-level date (`Aug 29`); played rows carry month and year
-(`May 2026`). The row template lives in an HTML comment above the rows.
-
-`#upcoming` stays on the page when nothing is booked. Ryan decided this on
-2026-09-01: with no rows it is a plain `sechead` over blank space, with no
-empty-state line, and the `sechead--cols` header with its Location label comes
-back with the first row. The HTML comment in the section shows both forms.
-Never delete the section or its nav link, and never add a "nothing here"
-message; blank space is his chosen signal for that, here and in a show panel
-with no media yet.
-
-A Played row can open a show dialog over the page: a SoundCloud recording, a
-video embed, and photos from that night in a centred panel with the page
-dimmed and blurred behind it. The row's `gig-venue` becomes a `<button
-aria-controls="show-<slug>">`, the row takes `gig--show`, and a hidden
-`<section class="show" id="show-<slug>">` after the rows holds the content.
-There is deliberately no hint text on the row; a faint underline is the only
-mark. `music/show.js` opens it, mirrors the open show as `#show/<slug>` so back
-and shared links work, closes on Escape, the Close control, or a click on the
-backdrop, and copies `data-src` to `src` on embeds the first time a show opens.
-The panel has two halves and no labels, modelled on a label's release page
-Ryan supplied: `show-lead` on the left holds the video, the title, a `show-link`
-to the event's ticket-page listing, and the SoundCloud player, with no date or
-city line; `show-grid` on the right is one `show-tile` per photo, reusing the
-Sets grid's `tile-art` and `tile-meta` classes. A show with no grid narrows to
-one column. The close control is a bare ✕ with an aria-label, no word. The
-template comment above the first section shows the full form. Photos for a show
-live under `images/music/shows/<slug>/`; video and audio are always embeds,
-never local files. The cruise holds its title and its posh.vip listing until its
-media exists. That link is proof the gig happened, not an attempt to sell a
-passed date, so it sits in the same faint mono register as a `gig-note` and
-reads "Event listing" rather than "Tickets".
-
-The centered title runs a noise-to-clarity diffusion animation built by clipping
-noise to the letterforms and revealing three states through their own masks.
-`music/music.css` ends with a `@media (prefers-reduced-motion: reduce)` block,
-and that OS setting has twice been mistaken for the animation being broken. Check
-it before debugging any animation here.
-
-The entrance plays on phones too. Until 2026-08-28 the `@media (max-width: 600px)`
-block in `music/music.css` hid it outright; it now swaps the middle layer to
-`#mark-noise-mid-sm` in `music/index.html`, a twin of `#mark-noise-mid` with every
-absolute length halved so the tearing stays proportionate to 50px glyphs. If the
-two filters ever diverge, change both. Verified at 375px and 320px in Playwright
-only, never on phone hardware. To see a phone width, use Playwright's
-`browser_resize`: the Chrome MCP's `resize_window` reports success but leaves
-`innerWidth` unchanged on a maximized window.
 
 ## Ignored on purpose
 
