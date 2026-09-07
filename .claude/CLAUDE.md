@@ -63,27 +63,26 @@ the list shows the shape. Projects are `pub-entry` blocks, newest first.
 
 ## Reading list
 
-Nine entries currently, in `index.html` as `<a class="carousel-card">` blocks.
+Entries live in `index.html` as `<a class="carousel-card">` blocks.
 Each holds an `<img class="carousel-img">` pointing at
 `images/reading/<name>.webp`, then a `carousel-body` holding a `carousel-tag`,
 an `<h3>` title, a one-sentence `<p>`, and a `carousel-meta` reading `Read
 More`. Cards past the first three take `loading="lazy"`. The template comment
 above the track shows the shape.
 
-Tags in use: `Paper` (4), `Post` (4), `Release` (1).
+Tags in use: `Paper`, `Post`, `Release`.
 
 Descriptions are one sentence saying what the work does and what is novel.
 Present tense, no hedging, no "this paper argues", no multi-sentence summaries.
 Read three existing entries and match their register before writing a new one.
 
-Ordering is **thematic, not grouped by tag** — verified 2026-08-17, the sequence
-is Paper, Paper, Paper, Post, Post, Post, Paper, Post, Release. Ryan once asked
+Ordering is **thematic, not grouped by tag**. Ryan once asked
 for robotics research first, then other research, then posts and releases, and
 the list only loosely reflects that. Do not assume strict type-grouping; read the
 current order and place a new entry by topic, asking him if the right slot is
 ambiguous.
 
-There is no page markup. All nine cards live in one `carousel-track`, and
+There is no page markup. All cards live in one `carousel-track`, and
 `carousel.js` paginates client-side at 3, 2, or 1 cards per page depending on
 viewport width (>900px, 601–900px, ≤600px). "Which page" is a function of window
 size, not of the HTML.
