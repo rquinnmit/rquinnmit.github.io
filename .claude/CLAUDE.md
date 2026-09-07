@@ -26,9 +26,13 @@ the surrounding indentation and leave untouched lines untouched.
 
 Layout: `index.html`, `styles.css` and `carousel.js` at the root; the redirect
 stub at `music/index.html`; self-hosted Lato in `fonts/`; assets under
-`images/`, `papers/`, and `resumes/`. `.nojekyll` makes Pages copy the branch
-rather than run Jekyll over it; verified 2026-09-07 that Pages still refuses
-dot-directories with it present, so `.claude/` stays unserved. Never delete it.
+`images/`, `papers/`, and `resumes/`.
+
+Never add a `.nojekyll` file here. Jekyll is what keeps dot-directories off
+the site; verified 2026-09-07 that with `.nojekyll` present Pages served
+`.claude/CLAUDE.md` at the site root (only `.github/` stays withheld). The
+checker fails if the file appears. The build takes about a minute for the
+same reason.
 
 Fonts are self-hosted (latin subsets of Google's Lato woff2 builds, SIL Open
 Font License) because a stylesheet link to fonts.googleapis.com is

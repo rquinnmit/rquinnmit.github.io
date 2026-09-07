@@ -19,7 +19,6 @@ This file explains how the pieces fit and how to make the routine edits.
 | `papers/`, `resumes/` | PDFs linked from Projects and the header. |
 | `music/index.html` | Redirect stub to diffusiondj.com that carries the show hash across. Never delete it. |
 | `tools/check.py` | Checks the invariants below. Standard library only. |
-| `.nojekyll` | Tells Pages to publish the branch as-is. Never delete it. |
 
 ## Preview
 
@@ -60,8 +59,8 @@ Encode WebP with `cwebp -q 85 -m 6 -metadata none in.jpg -o out.webp`.
 
 ## Deploy
 
-Push to `main`. GitHub Pages copies the branch; there is no build. Confirm
-the deploy with:
+Push to `main`. GitHub Pages runs its Jekyll pass, which is what keeps
+`.claude/` off the site, and takes about a minute. Confirm the deploy with:
 
 ```
 gh api repos/rquinnmit/rquinnmit.github.io/pages/builds/latest --jq '{status,created_at,error}'

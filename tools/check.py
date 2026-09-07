@@ -25,7 +25,9 @@ Rules checked
 - The Open Graph image's declared width and height match the file.
 - The stylesheet uses no hex colour outside the :root tokens and no
   !important, and defines --per-page for the carousel.
-- music/index.html still redirects to diffusiondj.com; .nojekyll exists.
+- music/index.html still redirects to diffusiondj.com, and there is no
+  .nojekyll: without Jekyll, Pages serves dot-directories, which would
+  publish .claude/CLAUDE.md.
 """
 from __future__ import annotations
 
@@ -284,8 +286,8 @@ def check_repo_files() -> None:
     stub = ROOT / "music" / "index.html"
     if not stub.is_file() or "https://diffusiondj.com/" not in stub.read_text():
         flag("music/index.html", "the redirect stub to diffusiondj.com must stay")
-    if not (ROOT / ".nojekyll").is_file():
-        flag(".nojekyll", "missing; Pages would run Jekyll over the branch")
+    if (ROOT / ".nojekyll").is_file():
+        flag(".nojekyll", "must not exist here: without Jekyll, Pages serves .claude/CLAUDE.md")
 
 
 def main() -> int:
