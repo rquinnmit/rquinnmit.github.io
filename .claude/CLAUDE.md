@@ -10,30 +10,61 @@ across so shared show links keep working. Never delete that stub. The two Music
 links on the front page point straight at the domain, and the DJ site
 deliberately does not link back.
 
+`README.md` explains the layout and the routine edits. This file holds the
+decisions and the rules behind them.
+
 ## Stack
 
 Hand-written HTML, CSS, and vanilla JS. **No package.json, no bundler, no build
-step, no test suite.** There is nothing to run before shipping, and claiming
-"tests pass" here would be meaningless — say so plainly instead.
+step, no test suite.** The one thing to run is `python3 tools/check.py`, a
+standard-library script that verifies the invariants listed in its docstring.
+Run it after editing `index.html` or `styles.css`, and say plainly that it is a
+lint, not a test suite, when reporting. A GitHub Action runs it on every push.
 
 Because every file is hand-authored, never reformat HTML or CSS wholesale. Match
 the surrounding indentation and leave untouched lines untouched.
 
-Layout: `index.html` and `styles.css` at the root with `carousel.js`; the
-redirect stub at `music/index.html`; assets under `images/`, `papers/`, and
-`resumes/`.
+Layout: `index.html`, `styles.css` and `carousel.js` at the root; the redirect
+stub at `music/index.html`; self-hosted Lato in `fonts/`; assets under
+`images/`, `papers/`, and `resumes/`. `.nojekyll` makes Pages copy the branch
+rather than run Jekyll over it; verified 2026-09-07 that Pages still refuses
+dot-directories with it present, so `.claude/` stays unserved. Never delete it.
+
+Fonts are self-hosted (latin subsets of Google's Lato woff2 builds, SIL Open
+Font License) because a stylesheet link to fonts.googleapis.com is
+render-blocking and cross-origin, and was the largest cost in front of first
+paint. Do not reintroduce a googleapis or gstatic link.
 
 To look at a page in Playwright, serve the repo over HTTP first (`python3 -m
 http.server`); the Playwright MCP refuses `file:` URLs. Navigating from a URL to
 the same URL plus a hash is a fragment navigation and does not reload the
 document, so add a throwaway query string when a reload is the point.
 
+## Stylesheet
+
+The header comment of `styles.css` says how it is organised. The rules: a new
+rule's phone block goes beside its component, not at the end of the file;
+colour is a token from `:root`, never a new hex, and every text token passes
+WCAG AA on white; no `!important`. The checker enforces the hex rule.
+
+The reading-list breakpoints live in one place, the track's `--per-page`
+custom property in `styles.css`; `carousel.js` reads it rather than carrying
+its own copy.
+
+## Experience and projects
+
+Experience is a `<ul class="experience">` of `li.exp` rows, newest first, laid
+out with grid on desktop and restacked on phones; the template comment above
+the list shows the shape. Projects are `pub-entry` blocks, newest first.
+
 ## Reading list
 
-Nine entries currently, in `index.html` as `<a class="carousel-card">` blocks. Each
-wraps a `carousel-img` div whose `background-image` points at
-`images/reading/<name>.webp`, then a `carousel-body` holding a `carousel-tag`, an
-`<h3>` title, a one-sentence `<p>`, and a `carousel-meta` reading `Read More`.
+Nine entries currently, in `index.html` as `<a class="carousel-card">` blocks.
+Each holds an `<img class="carousel-img">` pointing at
+`images/reading/<name>.webp`, then a `carousel-body` holding a `carousel-tag`,
+an `<h3>` title, a one-sentence `<p>`, and a `carousel-meta` reading `Read
+More`. Cards past the first three take `loading="lazy"`. The template comment
+above the track shows the shape.
 
 Tags in use: `Paper` (4), `Post` (4), `Release` (1).
 
@@ -55,9 +86,10 @@ size, not of the HTML.
 
 Every entry needs a local `.webp` under `images/reading/`. That file cannot be
 fabricated — name the exact filename the entry expects and leave the reference.
+The checker fails on a missing file.
 
 ## Ignored on purpose
 
-`docs/` and `.superpowers/` are gitignored, both currently untracked. Pages serves
-whatever is in the branch, so tracking them would publish planning artifacts at
-rquinnmit.github.io/docs/.
+`docs/`, `.superpowers/`, `.playwright-mcp/`, `/CLAUDE.md` and `/AGENTS.md` are
+gitignored. Pages serves whatever is in the branch, so tracking them would
+publish planning artifacts and agent instructions at the site root.

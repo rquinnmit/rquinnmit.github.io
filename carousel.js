@@ -1,77 +1,90 @@
+/**
+ * Reading-list carousel.
+ *
+ * Every card lives in one .carousel-track and this script pages through them
+ * by translating the track. How many cards make a page is the stylesheet's
+ * decision, read from the track's --per-page custom property, so the
+ * breakpoints live in one place. A resize re-measures the page width and
+ * rebuilds the dots only when the count changes, so a phone's address bar
+ * appearing does not snap the list back to its first page. Autoplay advances
+ * every six seconds, pauses while the pointer or keyboard focus is on the
+ * track or the tab is hidden, and never runs under prefers-reduced-motion.
+ */
 (() => {
+    'use strict';
+
     const track = document.querySelector('.carousel-track');
-    const cards = document.querySelectorAll('.carousel-card');
-    const prevBtn = document.querySelector('.carousel-prev');
-    const nextBtn = document.querySelector('.carousel-next');
-    const dotsContainer = document.querySelector('.carousel-dots');
+    const cards = track ? [...track.querySelectorAll('.carousel-card')] : [];
+    const dots = document.querySelector('.carousel-dots');
+    if (!track || !dots || cards.length < 2) return;
 
-    if (!track || cards.length === 0) return;
-
-    const visibleCount = () => {
-        if (window.innerWidth <= 600) return 1;
-        if (window.innerWidth <= 900) return 2;
-        return 3;
-    };
-
+    const AUTO_MS = 6000;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let perPage = 0;
     let current = 0;
-    let autoInterval;
+    let timer = null;
 
-    const totalPages = () => Math.ceil(cards.length / visibleCount());
+    const cardsPerPage = () => parseInt(getComputedStyle(track).getPropertyValue('--per-page'), 10) || 1;
+    const pageCount = () => Math.ceil(cards.length / perPage);
+
+    function goTo(page) {
+        const pages = pageCount();
+        current = ((page % pages) + pages) % pages;
+        const pitch = cards[1].offsetLeft - cards[0].offsetLeft;
+        track.style.transform = `translateX(-${current * perPage * pitch}px)`;
+        [...dots.children].forEach((dot, i) => {
+            dot.classList.toggle('active', i === current);
+            dot.setAttribute('aria-current', i === current ? 'true' : 'false');
+        });
+    }
 
     function buildDots() {
-        dotsContainer.innerHTML = '';
-        const pages = totalPages();
-        for (let i = 0; i < pages; i++) {
-            const dot = document.createElement('span');
-            dot.classList.add('dot');
-            if (i === current) dot.classList.add('active');
-            dot.addEventListener('click', () => goTo(i));
-            dotsContainer.appendChild(dot);
+        dots.replaceChildren();
+        for (let i = 0; i < pageCount(); i++) {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'dot';
+            dot.setAttribute('aria-label', `Page ${i + 1}`);
+            dot.addEventListener('click', () => { goTo(i); start(); });
+            dots.append(dot);
         }
     }
 
-    function updateDots() {
-        const dots = dotsContainer.querySelectorAll('.dot');
-        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    function stop() {
+        clearInterval(timer);
+        timer = null;
     }
 
-    function goTo(page) {
-        const pages = totalPages();
-        current = ((page % pages) + pages) % pages;
-        const cardWidth = cards[0].offsetWidth + 20;
-        const offset = current * visibleCount() * cardWidth;
-        track.style.transform = `translateX(-${offset}px)`;
-        updateDots();
+    function start() {
+        stop();
+        if (reduced.matches || document.hidden) return;
+        timer = setInterval(() => goTo(current + 1), AUTO_MS);
     }
 
-    function next() {
-        goTo(current + 1);
-    }
-
-    function prev() {
-        goTo(current - 1);
-    }
-
-    function startAuto() {
-        stopAuto();
-        autoInterval = setInterval(next, 6000);
-    }
-
-    function stopAuto() {
-        clearInterval(autoInterval);
-    }
-
-    nextBtn.addEventListener('click', () => { next(); startAuto(); });
-    prevBtn.addEventListener('click', () => { prev(); startAuto(); });
-
-    track.addEventListener('mouseenter', stopAuto);
-    track.addEventListener('mouseleave', startAuto);
-
-    window.addEventListener('resize', () => {
+    function layout() {
+        const count = cardsPerPage();
+        if (count === perPage) {
+            goTo(current);
+            return;
+        }
+        perPage = count;
         buildDots();
         goTo(0);
-    });
+    }
 
-    buildDots();
-    startAuto();
+    document.querySelector('.carousel-prev').addEventListener('click', () => { goTo(current - 1); start(); });
+    document.querySelector('.carousel-next').addEventListener('click', () => { goTo(current + 1); start(); });
+
+    track.addEventListener('mouseenter', stop);
+    track.addEventListener('mouseleave', start);
+    track.addEventListener('focusin', stop);
+    track.addEventListener('focusout', (event) => {
+        if (!track.contains(event.relatedTarget)) start();
+    });
+    document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+    reduced.addEventListener('change', start);
+    window.addEventListener('resize', layout);
+
+    layout();
+    start();
 })();

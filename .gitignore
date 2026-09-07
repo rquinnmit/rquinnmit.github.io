@@ -17,3 +17,7 @@ docs/
 # Machine-local permissions and preferences. The allow-list carries absolute
 # scratchpad paths from this machine.
 .claude/settings.local.json
+
+# Codex reads this from disk; committing it would publish it at the site root
+# for the same reason as /CLAUDE.md above.
+/AGENTS.md
