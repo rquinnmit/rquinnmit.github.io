@@ -16,9 +16,11 @@ This file explains how the pieces fit and how to make the routine edits.
 | `carousel.js` | Pages the reading list; reads how many cards make a page from the stylesheet. |
 | `fonts/` | Self-hosted latin subsets of Lato 400, 700 and 900 (SIL Open Font License). |
 | `images/` | Profile photo, employer logos, project thumbnails, `reading/` card images, the share card and favicon. |
-| `papers/`, `resumes/` | PDFs linked from Projects and the header. |
+| `papers/` | PDFs linked from Projects. |
+| `resumes/resume.pdf` | The CV linked from the header. A copy; the source of truth is the resumes repo. See Resume below. |
 | `music/index.html` | Redirect stub to diffusiondj.com that carries the show hash across. Never delete it. |
 | `tools/check.py` | Checks the invariants below. Standard library only. |
+| `tools/sync-resume.py` | Refreshes `resumes/resume.pdf` from the resumes repo. Standard library only. |
 
 ## Preview
 
@@ -37,6 +39,22 @@ rules it checks are listed in its docstring. Run it after any edit to
 `index.html` or `styles.css`. A GitHub Action runs it on every push as well
 and marks the commit, though it cannot stop Pages publishing a commit that
 fails.
+
+## Resume
+
+The CV is authored in `~/Personal/Resumes` (github.com/rquinnmit/resumes) and
+only served from here, so `resumes/resume.pdf` is a build artifact, not a
+source. Refresh it and commit the result:
+
+```
+python3 tools/sync-resume.py
+```
+
+`--check` reports without copying and exits 1 when the two have drifted; run
+it before publishing anything that mentions the CV. A symlink would express
+this better but does not survive deployment: Pages builds from a checkout of
+this repo alone, so a link pointing outside it dangles on the runner and
+Jekyll skips symlinks anyway. The copy drifted a month once already.
 
 ## Routine edits
 
