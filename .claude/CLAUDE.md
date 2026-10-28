@@ -76,11 +76,11 @@ Descriptions are one sentence saying what the work does and what is novel.
 Present tense, no hedging, no "this paper argues", no multi-sentence summaries.
 Read three existing entries and match their register before writing a new one.
 
-Ordering is **thematic, not grouped by tag**. Ryan once asked
-for robotics research first, then other research, then posts and releases, and
-the list only loosely reflects that. Do not assume strict type-grouping; read the
-current order and place a new entry by topic, asking him if the right slot is
-ambiguous.
+Ordering is **by release date, newest first**, regardless of tag or topic
+(Ryan's call on 2026-10-28, replacing an earlier thematic order). The date is
+the work's first public release: for a paper with an arXiv preprint that
+predates its blog post, the preprint date. After moving cards, keep the first
+three without `loading="lazy"` and the rest with it.
 
 There is no page markup. All cards live in one `carousel-track`, and
 `carousel.js` paginates client-side at 3, 2, or 1 cards per page depending on

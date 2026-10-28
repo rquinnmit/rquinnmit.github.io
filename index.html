@@ -221,7 +221,7 @@
             <h2>Reading List</h2>
             <p class="section-subtitle">Papers, posts, and current releases.</p>
 
-            <!-- One card per entry, placed by topic (see .claude/CLAUDE.md). The
+            <!-- One card per entry, newest release first (see .claude/CLAUDE.md). The
                  image is a local .webp under images/reading/. Cards past the
                  first three take loading="lazy". A card whose sentence needs an
                  inline link uses the Waymo form below instead, since a link
@@ -238,21 +238,12 @@
             -->
             <div class="carousel-wrapper">
                 <div class="carousel-track">
-                    <a href="https://generalistai.com/blog/gen-1.5" target="_blank" rel="noopener" class="carousel-card">
-                        <img class="carousel-img" src="images/reading/generalist_gen1_5.webp" alt="">
+                    <a href="https://research.nvidia.com/labs/sil/projects/foundation4d/" target="_blank" rel="noopener" class="carousel-card">
+                        <img class="carousel-img" src="images/reading/nvidia_foundation4d.webp" alt="">
                         <div class="carousel-body">
                             <span class="carousel-tag">Paper</span>
-                            <h3>GEN-1.5: Embodied Foundation Models are One-Shot Learners</h3>
-                            <p>Generalist's robot foundation model that learns a new physical task from a single demonstration placed in its context window, no gradient updates required, the first model shown to exhibit one-shot and few-shot learning of dexterous skills at scale.</p>
-                            <span class="carousel-meta">Read More</span>
-                        </div>
-                    </a>
-                    <a href="https://www.pi.website/blog/pi07" target="_blank" rel="noopener" class="carousel-card">
-                        <img class="carousel-img" src="images/reading/pi_pi07.webp" alt="">
-                        <div class="carousel-body">
-                            <span class="carousel-tag">Paper</span>
-                            <h3>&pi;<sub>0.7</sub>: A Steerable Model with Emergent Capabilities</h3>
-                            <p>Physical Intelligence's general-purpose robotic foundation model that combines language, metadata, and visual subgoals to generalize across tasks and embodiments without fine-tuning.</p>
+                            <h3>Foundation4D: Towards a Unified Perception and Reconstruction Model for Autonomous Vehicles</h3>
+                            <p>NVIDIA's feedforward model that turns multi-camera driving video into depth, 3D object tracks, semantic occupancy, and Gaussian reconstructions from one shared spatiotemporal backbone, where co-training the tasks improves both detection and geometry.</p>
                             <span class="carousel-meta">Read More</span>
                         </div>
                     </a>
@@ -265,12 +256,21 @@
                             <span class="carousel-meta">Read More</span>
                         </div>
                     </a>
-                    <a href="https://www.pi.website/research/real_time_chunking" target="_blank" rel="noopener" class="carousel-card">
-                        <img class="carousel-img" src="images/reading/pi_real_time_chunking.webp" alt="" loading="lazy">
+                    <a href="https://generalistai.com/blog/gen-1.5" target="_blank" rel="noopener" class="carousel-card">
+                        <img class="carousel-img" src="images/reading/generalist_gen1_5.webp" alt="">
                         <div class="carousel-body">
                             <span class="carousel-tag">Paper</span>
-                            <h3>Real-Time Action Chunking with Large Models</h3>
-                            <p>Treats chunk transitions as an inpainting problem, letting VLA policies act smoothly and continuously even under high inference latency.</p>
+                            <h3>GEN-1.5: Embodied Foundation Models are One-Shot Learners</h3>
+                            <p>Generalist's robot foundation model that learns a new physical task from a single demonstration placed in its context window, no gradient updates required, the first model shown to exhibit one-shot and few-shot learning of dexterous skills at scale.</p>
+                            <span class="carousel-meta">Read More</span>
+                        </div>
+                    </a>
+                    <a href="https://drfeifei.substack.com/p/a-functional-taxonomy-of-world-models" target="_blank" rel="noopener" class="carousel-card">
+                        <img class="carousel-img" src="images/reading/feifei_world_models.webp" alt="" loading="lazy">
+                        <div class="carousel-body">
+                            <span class="carousel-tag">Post</span>
+                            <h3>A Functional Taxonomy of World Models</h3>
+                            <p>Fei-Fei Li divides world models into three functional categories (renderers, simulators, and planners) and argues simulation is the link between visual generation and embodied action.</p>
                             <span class="carousel-meta">Read More</span>
                         </div>
                     </a>
@@ -294,15 +294,6 @@
                             <a href="https://waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simulation/" target="_blank" rel="noopener" class="carousel-meta">Read More</a>
                         </div>
                     </div>
-                    <a href="https://www.boyuan.space/large-video-planner/" target="_blank" rel="noopener" class="carousel-card">
-                        <img class="carousel-img" src="images/reading/large_video_planner.webp" alt="" loading="lazy">
-                        <div class="carousel-body">
-                            <span class="carousel-tag">Paper</span>
-                            <h3>Large Video Planner</h3>
-                            <p>A video foundation model for robotics that generates video plans and retargets them into executable robot motions.</p>
-                            <span class="carousel-meta">Read More</span>
-                        </div>
-                    </a>
                     <a href="https://www.vincentsitzmann.com/blog/bitter_lesson_of_cv/" target="_blank" rel="noopener" class="carousel-card">
                         <img class="carousel-img" src="images/reading/bitter_lesson.webp" alt="" loading="lazy">
                         <div class="carousel-body">
@@ -312,12 +303,21 @@
                             <span class="carousel-meta">Read More</span>
                         </div>
                     </a>
-                    <a href="https://drfeifei.substack.com/p/a-functional-taxonomy-of-world-models" target="_blank" rel="noopener" class="carousel-card">
-                        <img class="carousel-img" src="images/reading/feifei_world_models.webp" alt="" loading="lazy">
+                    <a href="https://www.boyuan.space/large-video-planner/" target="_blank" rel="noopener" class="carousel-card">
+                        <img class="carousel-img" src="images/reading/large_video_planner.webp" alt="" loading="lazy">
                         <div class="carousel-body">
-                            <span class="carousel-tag">Post</span>
-                            <h3>A Functional Taxonomy of World Models</h3>
-                            <p>Fei-Fei Li divides world models into three functional categories (renderers, simulators, and planners) and argues simulation is the link between visual generation and embodied action.</p>
+                            <span class="carousel-tag">Paper</span>
+                            <h3>Large Video Planner</h3>
+                            <p>A video foundation model for robotics that generates video plans and retargets them into executable robot motions.</p>
+                            <span class="carousel-meta">Read More</span>
+                        </div>
+                    </a>
+                    <a href="https://deepmind.google/blog/d4rt-teaching-ai-to-see-the-world-in-four-dimensions/" target="_blank" rel="noopener" class="carousel-card">
+                        <img class="carousel-img" src="images/reading/deepmind_d4rt.webp" alt="" loading="lazy">
+                        <div class="carousel-body">
+                            <span class="carousel-tag">Paper</span>
+                            <h3>D4RT: Teaching AI to See the World in Four Dimensions</h3>
+                            <p>Google DeepMind's feedforward model that recovers depth, 3D point tracks, and camera parameters from a single video by encoding the scene once and answering independent queries for where any pixel sits in 3D at any time, unifying 4D reconstruction tasks behind one fast, parallel decoder.</p>
                             <span class="carousel-meta">Read More</span>
                         </div>
                     </a>

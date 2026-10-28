@@ -69,7 +69,7 @@ checker.
 WebP thumbnail, the PDF under `papers/`, and the date as `Month YYYY`.
 
 **Add a reading-list entry.** The `/paper` command drafts one from a URL or
-PDF in the house style. Place it by topic, not by tag, and put the image at
+PDF in the house style. Place it by release date, newest first, and put the image at
 the exact path the card names under `images/reading/`. The checker fails on a
 missing image.
 
