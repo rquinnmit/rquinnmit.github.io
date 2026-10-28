@@ -78,8 +78,8 @@ Read three existing entries and match their register before writing a new one.
 
 Ordering is **by release date, newest first**, regardless of tag or topic
 (Ryan's call on 2026-10-28, replacing an earlier thematic order). The date is
-the work's first public release: for a paper with an arXiv preprint that
-predates its blog post, the preprint date. After moving cards, keep the first
+that of the page the card links to: a lab's blog post counts from its own
+date, even when an arXiv preprint came out earlier. After moving cards, keep the first
 three without `loading="lazy"` and the rest with it.
 
 There is no page markup. All cards live in one `carousel-track`, and
