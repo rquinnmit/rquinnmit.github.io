@@ -93,6 +93,6 @@ The checker fails on a missing file.
 
 ## Ignored on purpose
 
-`docs/`, `.superpowers/`, `.playwright-mcp/`, `/CLAUDE.md` and `/AGENTS.md` are
+`docs/`, `.playwright-mcp/`, `/CLAUDE.md` and `/AGENTS.md` are
 gitignored. Pages serves whatever is in the branch, so tracking them would
 publish planning artifacts and agent instructions at the site root.

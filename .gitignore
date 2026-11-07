@@ -1,8 +1,7 @@
 .DS_Store
-.superpowers/
 
 # Planning artifacts. GitHub Pages serves whatever is in the branch, so tracking
-# these would publish them at rquinnmit.github.io/docs/superpowers/...
+# these would publish them at rquinnmit.github.io/docs/...
 docs/
 
 # Claude Code instructions live at .claude/CLAUDE.md, not the repo root. Pages
