@@ -11,7 +11,7 @@ This file explains how the pieces fit and how to make the routine edits.
 
 | Path | What it is |
 |---|---|
-| `index.html` | The page. Content lives here, with a template for each repeating block in an HTML comment beside it. |
+| `index.html` | The page. Content lives here, with a template for the Experience rows and the reading-list cards in an HTML comment beside them. |
 | `styles.css` | The one stylesheet, in page order. Each component's phone rules sit right after its desktop rules. |
 | `carousel.js` | Pages the reading list; reads how many cards make a page from the stylesheet. |
 | `fonts/` | Self-hosted latin subsets of Lato 400, 700 and 900 (SIL Open Font License). |
@@ -19,7 +19,7 @@ This file explains how the pieces fit and how to make the routine edits.
 | `papers/` | PDFs linked from Projects. |
 | `resumes/resume.pdf` | The CV linked from the header. A copy; the source of truth is the resumes repo. See Resume below. |
 | `music/index.html` | Redirect stub to diffusiondj.com that carries the show hash across. Never delete it. |
-| `tools/check.py` | Checks the invariants below. Standard library only. |
+| `tools/check.py` | Checks the invariants listed in its docstring. Standard library only. |
 | `tools/sync-resume.py` | Refreshes `resumes/resume.pdf` from the resumes repo. Standard library only. |
 
 ## Preview
@@ -34,11 +34,11 @@ python3 -m http.server 8000
 python3 tools/check.py
 ```
 
-Prints `ok`, or one line per problem with a file and line, and exits 1. The
-rules it checks are listed in its docstring. Run it after any edit to
-`index.html` or `styles.css`. A GitHub Action runs it on every push as well
-and marks the commit, though it cannot stop Pages publishing a commit that
-fails.
+Prints `ok`, or one line per problem with a file and line, then a count, and
+exits 1. The rules it checks are listed in its docstring. Run it after any
+edit to `index.html` or `styles.css`. A GitHub Action runs it on every push
+as well and marks the commit, though it cannot stop Pages publishing a commit
+that fails.
 
 ## Resume
 
@@ -51,16 +51,14 @@ python3 tools/sync-resume.py
 ```
 
 `--check` reports without copying and exits 1 when the two have drifted; run
-it before publishing anything that mentions the CV. A symlink would express
-this better but does not survive deployment: Pages builds from a checkout of
-this repo alone, so a link pointing outside it dangles on the runner and
-Jekyll skips symlinks anyway. The copy drifted a month once already.
+it before publishing anything that mentions the CV. The copy drifted a month
+once already.
 
 ## Routine edits
 
-Every repeating block in `index.html` has a template in an HTML comment
-directly above the real entries. Copy the template, fill it in, then run the
-checker.
+Experience rows and reading-list cards each have a template in an HTML comment
+directly above the real entries; a project has none, so copy an existing
+`pub-entry`. Copy the template, fill it in, then run the checker.
 
 **Add a role.** Add an `li.exp` at the top of the Experience list with a
 200x200 WebP logo in `images/`. Dates read `Mon YYYY – Mon YYYY`.
@@ -68,10 +66,9 @@ checker.
 **Add a project.** Add a `pub-entry` at the top of Projects with an 800px-wide
 WebP thumbnail, the PDF under `papers/`, and the date as `Month YYYY`.
 
-**Add a reading-list entry.** The `/paper` command drafts one from a URL or
-PDF in the house style. Place it by release date, newest first, and put the image at
-the exact path the card names under `images/reading/`. The checker fails on a
-missing image.
+**Add a reading-list entry.** Place it by release date, newest first, and put
+the image at the exact path the card names under `images/reading/`. The
+checker fails on a missing image.
 
 Encode WebP with `cwebp -q 85 -m 6 -metadata none in.jpg -o out.webp`.
 

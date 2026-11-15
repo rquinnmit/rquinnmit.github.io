@@ -231,7 +231,6 @@ a:hover { color: var(--accent); }
 }
 
 @media (max-width: 600px) {
-    /* One card per row: logo down the left, details then dates stacked. */
     .exp {
         grid-template-columns: 52px minmax(0, 1fr);
         grid-template-rows: auto auto;

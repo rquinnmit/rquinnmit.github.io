@@ -18,10 +18,11 @@ Rules checked
   under fonts/, images/, papers/ and resumes/ is referenced (no orphans).
 - Every img has alt; every img outside the reading list has width and height.
 - Every link that opens a new tab carries rel="noopener".
-- Experience rows are dated ``Mon YYYY – Mon YYYY`` (or ``Present``) and run
-  newest first; project entries are dated ``Month YYYY`` and run newest first.
-- Every reading-list card has one tag (Paper, Post or Release), one title,
-  one sentence and one Read More.
+- Experience rows are dated ``Mon YYYY – Mon YYYY`` (or ``Present``), run
+  newest first, and each has a logo, an organisation and a team; project
+  entries are dated ``Month YYYY`` and run newest first.
+- Every reading-list card has one tag (Paper, Post or Release), one image,
+  one title, one sentence and one Read More.
 - The Open Graph image's declared width and height match the file.
 - The stylesheet uses no hex colour outside the :root tokens and no
   !important, and defines --per-page for the carousel.
